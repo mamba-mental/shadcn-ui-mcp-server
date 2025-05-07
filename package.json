@@ -1,0 +1,46 @@
+{
+  "name": "shadcn-ui-mcp-server",
+  "version": "0.1.2",
+  "description": "MCP server for shadcn/ui component references",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "shadcn-ui-server": "build/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "0.6.0",
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0-rc.12"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.5",
+    "typescript": "^5.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ymadd/shadcn-ui-mcp-server.git"
+  },
+  "author": "ymadd",
+  "bugs": {
+    "url": "https://github.com/ymadd/shadcn-ui-mcp-server/issues"
+  },
+  "homepage": "https://github.com/ymadd/shadcn-ui-mcp-server#readme",
+  "keywords": [
+    "shadcn/ui",
+    "MCP",
+    "model context protocol",
+    "component references"
+  ]
+}
