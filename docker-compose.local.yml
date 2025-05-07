@@ -3,13 +3,11 @@ version: "3.8"
 services:
   mcp-server:
     container_name: shadcn-ui-mcp-server
-    build:
-      context: /volume1/docker/stacks/shadcn-ui-mcp-server
-      dockerfile: Dockerfile
+    image: ghcr.io/ymadd/shadcn-ui-mcp-server:latest
     ports:
       - "7070:3000"
     volumes:
-      - /volume1/docker/stacks/shadcn-ui-mcp-server/data:/app/data
+      - ./data:/app/data
     environment:
       - NODE_ENV=production
     restart: unless-stopped
