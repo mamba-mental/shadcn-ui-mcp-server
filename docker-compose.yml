@@ -3,11 +3,10 @@ version: "3.8"
 services:
   mcp-server:
     container_name: shadcn-ui-mcp-server
-    image: ghcr.io/mamba-mental/shadcn-ui-mcp-server:latest # Crucial: points to YOUR ghcr.io image
+    image: ghcr.io/mamba-mental/shadcn-ui-mcp-server:latest
     ports:
-      - "7070:3000"
+      - "7707:3000"  # Changed from 7070:3000
     volumes:
-      # This absolute path must exist on your Docker host (NAS)
       - /volume1/docker/stacks/shadcn-ui-mcp-server/data:/app/data
     environment:
       - NODE_ENV=production
