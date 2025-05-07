@@ -3,10 +3,11 @@ version: "3.8"
 services:
   mcp-server:
     container_name: shadcn-ui-mcp-server
-    image: ghcr.io/mamba-mental/shadcn-ui-mcp-server:latest
+    image: ghcr.io/mamba-mental/shadcn-ui-mcp-server:latest # Ensure this image exists and is public or you've configured ghcr.io auth in Portainer
     ports:
-      - "7707:3000"  # Changed from 7070:3000
+      - "7707:3000" # Host port 7707 mapped to container port 3000
     volumes:
+      # This path must be valid and writable on your Docker host (NAS)
       - /volume1/docker/stacks/shadcn-ui-mcp-server/data:/app/data
     environment:
       - NODE_ENV=production
